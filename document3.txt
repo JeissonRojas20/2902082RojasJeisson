@@ -1,1 +1,2 @@
-Hi JavaScript.
+Hi JavaScript. 
+JavaScript is the best.
