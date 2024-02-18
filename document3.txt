@@ -1,2 +1,2 @@
 Hi JavaScript. 
-JavaScript is the best.
+JavaScript is the best. 
