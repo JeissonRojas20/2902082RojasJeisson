@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        nav {
+            text-align: center;
+        }
+
+        .collapse {
+            padding-left: 45rem;
+        }
+
+        section {
+
+            margin-left: 30em;
+            margin-right: 30em;
+            padding: 1em;
+        }
+
+        .submit {
+
+            margin-left: 47em;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        .input-number {
+            width: 150px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="d-flex flex-wrap justify-content-center py-2 mb-1 border-bottom">
+        <div class="text-center">
+            <img src="data:image/png;base64,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"
+                class="mx-2 d-block rounded-circle" alt="...">
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid text-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Operadores
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark" id="op">
+                            <li><button class="dropdown-item" id="AT">Area triangulo</button></li>
+                            <li><button class="dropdown-item" id="S">Suma dos numeros</button></li>
+                            <li><button class="dropdown-item" id="NE">Numero elevado al cuadrado</button></li>
+                            <li><button class="dropdown-item" id="ED">Euros a dolares</button></li>
+                            <li><button class="dropdown-item" id="AP">Area y perimetro cuadrado</button></li>
+                            <li><button class="dropdown-item" href="#">Area y volumen cilindro</button></li>
+                            <li><button class="dropdown-item" href="#">Longitud y area circulo</button></li>
+                            <li><button class="dropdown-item" href="#">Promedio tres numeros</button></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Condicionales
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ciclos
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Arreglos
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section>
+            <form class="d-none" id="form1" onsubmit="areaT()">
+                <h1 class="text-center mb-4">Area del triangulo</h1>
+                <div class="mb-3">
+                    <label for="base" class="form-label">Ingrese la base del triangulo</label>
+                    <input type="number" class="form-control d-inline-flex p-2" id="base" min="1"
+                        placeholder="Base triangulo" required>
+                </div>
+                <div class="mb-3">
+                    <label for="altura" class="form-label">Ingrese la altura del triangulo</label>
+                    <input type="number" class="form-control d-inline-flex p-2" id="altura"
+                        placeholder="Altura triangulo" required>
+                </div>
+                <button class="btn btn-outline-success submit">Calcular</button>
+            </form>
+
+            <form class="d-none" id="form2" onsubmit="suma()">
+                <h1 class="text-center mb-4">Suma dos numeros</h1>
+                <div class="mb-3">
+                    <label for="num1" class="form-label">Ingrese el primer numero</label>
+                    <input type="number" class="form-control d-inline-flex p-2" id="num1" min="1"
+                        placeholder="Primer numero" required>
+                </div>
+                <div class="mb-3">
+                    <label for="num2" class="form-label">Ingrese el segundo numero</label>
+                    <input type="number" class="form-control d-inline-flex p-2" id="num2" placeholder="Segundo numero"
+                        required>
+                </div>
+                <button class="btn btn-outline-success submit">Sumar</button>
+            </form>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+
+        let btn1 = document.querySelector('#AT');
+        let btn2 = document.querySelector('#S');
+        let form = document.querySelector('#form1');
+        let form2 = document.querySelector("#form2")
+
+        btn1.addEventListener("click", show1);
+
+        function show1() {
+
+            if (form.classList.contains('d-none')) {
+
+                form.classList.remove('d-none');
+                form2.classList.add('d-none');
+            }
+        }
+
+        btn2.addEventListener("click", show2);
+
+        function show2() {
+
+            if (form2.classList.contains('d-none')) {
+
+                form2.classList.remove('d-none');
+                form.classList.add('d-none');
+            }
+        }
+
+        function areaT() {
+
+            b = parseInt(document.getElementById("base").value);
+            h = parseInt(document.getElementById("altura").value);
+
+            resultado = b * h / 2;
+            alert("El area del triangulo es: " + resultado);
+
+        }
+
+        function suma(){
+
+            
+        }
+
+    </script>
+</body>
+
+</html>
